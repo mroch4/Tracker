@@ -1,9 +1,15 @@
+import { Button, Container } from "react-bootstrap";
 import { INTL, msInHour } from "../common/settings";
 
-import Label from "./Label";
+import Label from "./partials/_Label";
+import Popup from "./Popup";
 import { useAppContext } from "./Context";
+import { useState } from "react";
 
 const Total = () => {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+
   const { trackpoints } = useAppContext();
 
   const firstItem = trackpoints[0];
@@ -17,7 +23,7 @@ const Total = () => {
     unitDisplay: "short",
   }).format(totalDistance);
 
-  const totalTime = (lastItem.timeStamp.valueOf() - firstItem.timeStamp.valueOf()) / msInHour;
+  const totalTime = (Date.parse(lastItem.timeStamp).valueOf() - Date.parse(firstItem.timeStamp).valueOf()) / msInHour;
   const totalTimeFormatted = new Intl.NumberFormat(INTL, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -32,11 +38,19 @@ const Total = () => {
   }).format(totalAvgSpeed);
 
   return (
-    <section className="mt-3">
-      <Label desc="Total distance:" value={totalDistanceFormatted} />
-      <Label desc="Total time [h]:" value={totalTimeFormatted} />
-      <Label desc="Total avgSpeed:" value={totalAvgSpeedFormatted} />
-    </section>
+    <>
+      <Container>
+        <Label label="Całkowity dystans:" value={totalDistanceFormatted} />
+        <Label label="Całkowity czas [godz.]:" value={totalTimeFormatted} />
+        <Label label="Prędkość średnia:" value={totalAvgSpeedFormatted} />
+        <div className="button">
+          <Button variant="danger my-3" onClick={handleShow}>
+            Od nowa
+          </Button>
+        </div>
+      </Container>
+      <Popup show={show} setShow={setShow} />
+    </>
   );
 };
 

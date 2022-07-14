@@ -1,4 +1,4 @@
-import { ITrackpoint } from "./ITrackpoint";
+import { ITrackpoint } from "../ITrackpoint";
 
 export interface IContextProps {
   trackpoints: ITrackpoint[];

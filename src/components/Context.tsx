@@ -1,22 +1,25 @@
-import React, { FC, createContext, useContext, useState } from "react";
+import { FC, createContext, useContext } from "react";
 
-import { IContextProps } from "../interfaces/IContextProps";
-import { IContextProviderProps } from "../interfaces/IContextProviderProps";
+import { IContextProps } from "../interfaces/props/IContextProps";
+import { IContextProviderProps } from "../interfaces/props/IContextProviderProps";
 import { ITrackpoint } from "../interfaces/ITrackpoint";
-import { trackpointsDatabase } from "../common/trackpoints";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { v4 as uuid } from "uuid";
 
-const AppContext = createContext<IContextProps | null>(null);
+const AppContext = createContext<IContextProps>(null);
 
 export const useAppContext = () => {
   return useContext(AppContext);
 };
 
-const initial = {
-  trackpoints: trackpointsDatabase,
+export const initialTrackpoint: ITrackpoint = {
+  id: uuid(),
+  timeStamp: new Date().toJSON(),
+  distance: 0,
 };
 
 const ContextProvider: FC<IContextProviderProps> = ({ children }) => {
-  const [trackpoints, setTrackpoints] = useState<ITrackpoint[]>(initial.trackpoints);
+  const [trackpoints, setTrackpoints] = useLocalStorage("trackpoints", [initialTrackpoint]);
 
   const contextValue = {
     trackpoints: trackpoints,

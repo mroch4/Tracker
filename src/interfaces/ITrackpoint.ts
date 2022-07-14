@@ -1,5 +1,5 @@
 export interface ITrackpoint {
   id: string;
-  timeStamp: Date;
+  timeStamp: string;
   distance: number;
 }

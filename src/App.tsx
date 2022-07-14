@@ -1,5 +1,5 @@
 import ContextProvider from "./components/Context";
-import Main from "./components/Main";
+import Main from "./components/_Main";
 
 const App = () => {
   return (

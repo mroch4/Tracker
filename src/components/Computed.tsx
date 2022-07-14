@@ -1,11 +1,8 @@
 import { INTL, msInHour } from "../common/settings";
 
 import { FC } from "react";
+import { IComputedProps } from "../interfaces/props/IComputedProps";
 import { useAppContext } from "./Context";
-
-export interface IComputedProps {
-  index: number;
-}
 
 const Computed: FC<IComputedProps> = (props) => {
   const { trackpoints } = useAppContext();
@@ -18,13 +15,13 @@ const Computed: FC<IComputedProps> = (props) => {
     minimumFractionDigits: 1,
   }).format(distance);
 
-  const time = (currentTrackpoint.timeStamp.valueOf() - previousTrackpoint.timeStamp.valueOf()) / msInHour;
-  const hourFormatted = new Intl.NumberFormat(INTL, {
+  const timeSpan = (Date.parse(currentTrackpoint.timeStamp).valueOf() - Date.parse(previousTrackpoint.timeStamp).valueOf()) / msInHour;
+  const timeSpanFormatted = new Intl.NumberFormat(INTL, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
-  }).format(time);
+  }).format(timeSpan);
 
-  const avgSpeed = distance / time;
+  const avgSpeed = distance / timeSpan;
   const speedFormatted = new Intl.NumberFormat(INTL, {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
@@ -33,7 +30,7 @@ const Computed: FC<IComputedProps> = (props) => {
   return (
     <>
       <td>{distanceFormatted}</td>
-      <td>{hourFormatted}</td>
+      <td>{timeSpanFormatted}</td>
       <td>{speedFormatted}</td>
     </>
   );
