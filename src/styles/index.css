@@ -39,7 +39,11 @@ body {
 
 .container table th,
 .container table td {
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.container table .centered {
+  text-align: center;
 }
 
 .container table,

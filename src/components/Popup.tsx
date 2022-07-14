@@ -7,7 +7,7 @@ import { IPopupProps } from "../interfaces/props/IPopupProps";
 const Popup: FC<IPopupProps> = (props) => {
   const { show, setShow } = props;
 
-  const { updateTrackpoints } = useAppContext();
+  const { updateTrackpoints, labels } = useAppContext();
 
   const handleClose = () => setShow(false);
 
@@ -18,15 +18,15 @@ const Popup: FC<IPopupProps> = (props) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>UWAGA!</Modal.Title>
+        <Modal.Title>{labels.MODAL_CAUTION}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Czy na pewno chcesz usunąć wszystkie dane?</Modal.Body>
+      <Modal.Body>{labels.MODAL_WARNING}</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Powrót
+          {labels.BUTTON_BACK}
         </Button>
         <Button variant="danger" onClick={clearData}>
-          Tak, usuń dane
+          {labels.BUTTON_CONFIRM}
         </Button>
       </Modal.Footer>
     </Modal>

@@ -4,25 +4,29 @@ import Row from "./Row";
 import { useAppContext } from "./Context";
 
 const Table = () => {
-  const { trackpoints } = useAppContext();
+  const { trackpoints, labels } = useAppContext();
 
   return (
     <Container>
       <table>
         <thead>
           <tr>
-            <th>Godzina</th>
+            <th>{labels.TH_TIME}</th>
             <th>
-              Suma<br></br>[km]
+              {labels.TH_TOTAL}
+              <br></br>[{labels.UNIT_DISTANCE}]
             </th>
             <th>
-              Odcinek<br></br>[km]
+              {labels.TH_SEGMENT}
+              <br></br>[{labels.UNIT_DISTANCE}]
             </th>
             <th>
-              Czas<br></br>[h]
+              {labels.TH_TIME}
+              <br></br>[{labels.UNIT_TIME}]
             </th>
             <th>
-              Średnia<br></br>[km/h]
+              {labels.TH_AVGSPEED}
+              <br></br>[{labels.UNIT_DISTANCE}/{labels.UNIT_TIME}]
             </th>
           </tr>
         </thead>

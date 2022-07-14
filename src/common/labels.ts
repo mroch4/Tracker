@@ -1,0 +1,48 @@
+import { ILabelsPack } from "../interfaces/ILabelsPack";
+
+export const LABELS: ILabelsPack[] = [
+  {
+    intl: "en-EN",
+    labels: {
+      BUTTON_ADD: "Add segment",
+      BUTTON_BACK: "Back to main",
+      BUTTON_CLEAR: "Clear",
+      BUTTON_CONFIRM: "Yes",
+      INPUT_LABEL: "Distance [hectometers]",
+      MODAL_CAUTION: "WARNING:",
+      MODAL_WARNING: "Are you sure that you want to remove all the data?",
+      TH_TIME: "Time",
+      TH_TOTAL: "Total",
+      TH_SEGMENT: "Segment",
+      TH_DURATION: "Duration",
+      TH_AVGSPEED: "Average",
+      TOTAL_DISTANCE: "Total distance:",
+      TOTAL_TIME: "Total time:",
+      TOTAL_AVGSPEED: "Average speed:",
+      UNIT_DISTANCE: "km",
+      UNIT_TIME: "h",
+    },
+  },
+  {
+    intl: "pl-PL",
+    labels: {
+      BUTTON_ADD: "Dodaj odcinek",
+      BUTTON_BACK: "Powrót",
+      BUTTON_CLEAR: "Od nowa",
+      BUTTON_CONFIRM: "Tak, usuń dane",
+      INPUT_LABEL: "Dystans [hektometry]",
+      MODAL_CAUTION: "UWAGA!",
+      MODAL_WARNING: "Czy na pewno chcesz usunąć wszystkie dane?",
+      TH_TIME: "Godzina",
+      TH_TOTAL: "Suma",
+      TH_SEGMENT: "Odcinek",
+      TH_DURATION: "Czas",
+      TH_AVGSPEED: "Średnia",
+      TOTAL_DISTANCE: "Całkowity dystans:",
+      TOTAL_TIME: "Całkowity czas:",
+      TOTAL_AVGSPEED: "Prędkość średnia:",
+      UNIT_DISTANCE: "km",
+      UNIT_TIME: "godz.",
+    },
+  },
+];
