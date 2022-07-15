@@ -15,6 +15,12 @@ const Total = () => {
   const firstItem = trackpoints[0];
   const lastItem = trackpoints[trackpoints.length - 1];
 
+  // const totalDistance = trackpoints
+  // .map((item) => item.distance)
+  // .reduce((previousValue, currentValue) => {
+  //   return previousValue + currentValue;
+  // });
+
   const totalDistance = lastItem.distance;
   const totalDistanceFormatted = new Intl.NumberFormat(intl, {
     minimumFractionDigits: 1,
