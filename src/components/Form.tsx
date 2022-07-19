@@ -1,7 +1,7 @@
 import { Button, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-import { useAppContext } from "./Context";
+import { useAppContext } from "../contexts/Context";
 import { v4 as uuid } from "uuid";
 
 const Form = () => {

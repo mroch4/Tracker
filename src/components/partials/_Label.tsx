@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { ILabelProps } from "../../interfaces/props/ILabelProps";
+import { ILabel } from "../interfaces/ILabel";
 
-const Label: FC<ILabelProps> = (props) => {
+const Label: FC<ILabel> = (props) => {
   const { label, value } = props;
 
   return (

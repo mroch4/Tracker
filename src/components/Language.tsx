@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import { LABELS } from "../common/labels";
-import { useAppContext } from "./Context";
+import { LABELS } from "../labels/Labels";
+import { useAppContext } from "../contexts/Context";
 
 const Language = () => {
   const { intl, changeIntl } = useAppContext();

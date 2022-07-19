@@ -1,10 +1,10 @@
 import Blank from "./Blank";
 import Computed from "./Computed";
 import { FC } from "react";
-import { IRowProps } from "../interfaces/props/IRowProps";
-import { useAppContext } from "./Context";
+import { IRow } from "./interfaces/IRow";
+import { useAppContext } from "../contexts/Context";
 
-const Row: FC<IRowProps> = (props) => {
+const Row: FC<IRow> = (props) => {
   const { index, trackpoint } = props;
 
   const { intl } = useAppContext();

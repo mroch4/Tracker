@@ -1,9 +1,8 @@
 import { FC } from "react";
-import { IComputedProps } from "../interfaces/props/IComputedProps";
-import { msInHour } from "../common/settings";
-import { useAppContext } from "./Context";
+import { IComputed } from "./interfaces/IComputed";
+import { useAppContext } from "../contexts/Context";
 
-const Computed: FC<IComputedProps> = (props) => {
+const Computed: FC<IComputed> = (props) => {
   const { trackpoints, intl } = useAppContext();
 
   const currentTrackpoint = trackpoints[props.index];
@@ -14,6 +13,7 @@ const Computed: FC<IComputedProps> = (props) => {
     minimumFractionDigits: 1,
   }).format(distance);
 
+  const msInHour = 60 * 60 * 1000;
   const timeSpan = (Date.parse(currentTrackpoint.timeStamp).valueOf() - Date.parse(previousTrackpoint.timeStamp).valueOf()) / msInHour;
   const timeSpanFormatted = new Intl.NumberFormat(intl, {
     minimumFractionDigits: 2,

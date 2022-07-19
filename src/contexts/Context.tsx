@@ -1,10 +1,10 @@
 import { FC, createContext, useContext, useEffect, useState } from "react";
 
-import { IContextProps } from "../interfaces/props/IContextProps";
-import { IContextProviderProps } from "../interfaces/props/IContextProviderProps";
+import { IContextProps } from "./IContextProps";
+import { IContextProviderProps } from "./IContextProviderProps";
 import { ITrackpoint } from "../interfaces/ITrackpoint";
-import { LABELS } from "../common/labels";
-import useLocalStorage from "../hooks/useLocalStorage";
+import { LABELS } from "../labels/Labels";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import { v4 as uuid } from "uuid";
 
 const AppContext = createContext<IContextProps>(null);

@@ -1,5 +1,5 @@
-import { ILabels } from "../ILabels";
-import { ITrackpoint } from "../ITrackpoint";
+import { ILabels } from "../labels/interfaces/ILabels";
+import { ITrackpoint } from "../interfaces/ITrackpoint";
 
 export interface IContextProps {
   trackpoints: ITrackpoint[];

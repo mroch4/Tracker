@@ -2,8 +2,7 @@ import { Button, Container } from "react-bootstrap";
 
 import Label from "./partials/_Label";
 import Popup from "./Popup";
-import { msInHour } from "../common/settings";
-import { useAppContext } from "./Context";
+import { useAppContext } from "../contexts/Context";
 import { useState } from "react";
 
 const Total = () => {
@@ -29,6 +28,7 @@ const Total = () => {
     unitDisplay: "short",
   }).format(totalDistance);
 
+  const msInHour = 60 * 60 * 1000;
   const totalTime = (Date.parse(lastItem.timeStamp).valueOf() - Date.parse(firstItem.timeStamp).valueOf()) / msInHour;
   const totalTimeFormatted = new Intl.NumberFormat(intl, {
     minimumFractionDigits: 2,

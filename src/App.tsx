@@ -1,10 +1,10 @@
-import ContextProvider from "./components/Context";
-import Main from "./components/_Main";
+import ContextProvider from "./contexts/Context";
+import Layout from "./components/_Layout";
 
 const App = () => {
   return (
     <ContextProvider>
-      <Main />
+      <Layout />
     </ContextProvider>
   );
 };

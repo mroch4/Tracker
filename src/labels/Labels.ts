@@ -1,4 +1,4 @@
-import { ILabelsPack } from "../interfaces/ILabelsPack";
+import { ILabelsPack } from "./interfaces/ILabelsPack";
 
 export const LABELS: ILabelsPack[] = [
   {

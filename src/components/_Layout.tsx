@@ -2,9 +2,9 @@ import Form from "./Form";
 import Language from "./Language";
 import Table from "./Table";
 import Total from "./Total";
-import { useAppContext } from "./Context";
+import { useAppContext } from "../contexts/Context";
 
-const Main = () => {
+const Layout = () => {
   const { trackpoints } = useAppContext();
 
   return (
@@ -17,4 +17,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Layout;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { ITrackpoint } from "../interfaces/ITrackpoint";
 
-export default function useLocalStorage(key: string, defaultValue: ITrackpoint[]) {
+export const useLocalStorage = (key: string, defaultValue: ITrackpoint[]) => {
   const [value, setValue] = useState(() => {
     const jsonValue = localStorage.getItem(key);
 
@@ -18,4 +18,4 @@ export default function useLocalStorage(key: string, defaultValue: ITrackpoint[]
   }, [key, value]);
 
   return [value, setValue];
-}
+};

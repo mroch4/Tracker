@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { ITrackpoint } from "../interfaces/ITrackpoint";
 import Row from "./Row";
-import { useAppContext } from "./Context";
+import { useAppContext } from "../contexts/Context";
 
 const Table = () => {
   const { trackpoints, labels } = useAppContext();

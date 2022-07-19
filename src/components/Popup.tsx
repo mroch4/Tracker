@@ -1,10 +1,10 @@
 import { Button, Modal } from "react-bootstrap";
-import { initialTrackpoint, useAppContext } from "./Context";
+import { initialTrackpoint, useAppContext } from "../contexts/Context";
 
 import { FC } from "react";
-import { IPopupProps } from "../interfaces/props/IPopupProps";
+import { IPopup } from "./interfaces/IPopup";
 
-const Popup: FC<IPopupProps> = (props) => {
+const Popup: FC<IPopup> = (props) => {
   const { show, setShow } = props;
 
   const { updateTrackpoints, labels } = useAppContext();
